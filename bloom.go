@@ -166,6 +166,11 @@ func (f *BloomFilter) Copy() *BloomFilter {
 	return fc
 }
 
+// BitSet returns the underlying bitset for this filter.
+func (f *BloomFilter) BitSet() *bitset.BitSet {
+	return f.b
+}
+
 // AddString to the Bloom Filter. Returns the filter (allows chaining)
 func (f *BloomFilter) AddString(data string) *BloomFilter {
 	return f.Add([]byte(data))
